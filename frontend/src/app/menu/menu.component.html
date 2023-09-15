@@ -1,0 +1,729 @@
+<div class="sub_page">
+    <div class="hero_area">
+        <div class="bg-box">
+            <img src="../../../assets/images/hero-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            Le Café
+                        </span>
+                    </a>
+                    <div class="user_option">
+                    </div>
+                    <div class="navbar-toggler">
+                        <a class="cart_link" routerLink='/basket' (click)="envoyerPanier()">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029"
+                                style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                    </g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                            </svg>
+                            <sup>{{ indice }}</sup>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" mat-button [matMenuTriggerFor]="menu1">
+                        <span class=""> </span>
+                    </button>
+                    <mat-menu #menu1="matMenu">
+                        <ul class="navbar-nav  mx-auto ">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/index" mat-menu-item>Acceuil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a mat-button [matMenuTriggerFor]="menu3" class="nav-link" mat-menu-item>Menu</a>
+                                <mat-menu #menu3="matMenu">
+                                    <button mat-menu-item routerLink="/menu">BreakFast</button>
+                                    <button mat-menu-item routerLink="#">Lunch</button>
+                                    <button mat-menu-item routerLink="#">Dinner</button>
+                                </mat-menu>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/about" mat-menu-item>A Propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/basket" mat-menu-item>Mon panier</a>
+                            </li>
+                        </ul>
+                    </mat-menu>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  mx-auto ">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/index">Acceuil <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a mat-button [matMenuTriggerFor]="menu2" class="nav-link">Menu</a>
+                                <mat-menu #menu2="matMenu">
+                                    <button mat-menu-item routerLink="/menu">BreakFast</button>
+                                    <button mat-menu-item routerLink="#">Lunch</button>
+                                    <button mat-menu-item routerLink="#">Dinner</button>
+                                </mat-menu>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/about">A Propos</a>
+                            </li>
+                        </ul>
+
+                        <div class="user_option">
+                            <a class="cart_link" routerLink='/basket' (click)="envoyerPanier()">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                           c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                           C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                           c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                           C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                           c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                </svg>
+                                <sup>{{ indice }}</sup>
+                            </a>
+
+                            <form class="form-inline">
+                                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <!-- food section -->
+
+    <section class="food_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    BreakFast Menu
+                </h2>
+            </div>
+
+            <ul class="filters_menu">
+                <li class="active" (click)="showBoissons()">Boisson Chaude</li>
+                <li class="active" (click)="showCroissant()">Croissant</li>
+                <li class="active" (click)="showPain()">Pain</li>
+                <li class="active" (click)="showOmelettes()">Omelettes</li>
+            </ul>
+
+            <!-- Menu des Boisson Chaude -->
+
+            <div class="filters-content" *ngIf="boissons">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of boissonList; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <a class="cart_link" (click)="incrementerIndice()"
+                                                (click)="remplirPanierBoisson(i)">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 456.029 456.029"
+                                                    style="enable-background:new 0 0 456.029 456.029;"
+                                                    xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select [formControl]="toppingsBoissons" multiple>
+                                                        <mat-option *ngFor="let toppingsBoissons of toppingListBoissons"
+                                                            [value]="toppingsBoissons">
+                                                            {{toppingsBoissons}} Fcfa
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Menu des Boissons -->
+
+
+
+
+            <!-- Menu des Croissant -->
+
+            <div class="filters-content" *ngIf="croissant">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of croissantList; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <a class="cart_link" (click)="incrementerIndice()"
+                                                (click)="remplirPanierCroissant(i)">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 456.029 456.029"
+                                                    style="enable-background:new 0 0 456.029 456.029;"
+                                                    xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select [formControl]="toppingsCroissant" multiple>
+                                                        <mat-option
+                                                            *ngFor="let toppingCroissant of toppingListCroissant"
+                                                            [value]="toppingCroissant">
+                                                            {{toppingCroissant}} Fcfa
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Menu des Pain -->
+
+            <div class="filters-content" *ngIf="pain">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of painList; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <a class="cart_link" (click)="incrementerIndice()"
+                                                (click)="remplirPanierPain(i)">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 456.029 456.029"
+                                                    style="enable-background:new 0 0 456.029 456.029;"
+                                                    xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select [formControl]="toppingsPain" multiple>
+                                                        <mat-option *ngFor="let toppingPain of toppingListPain"
+                                                            [value]="toppingPain">
+                                                            {{toppingPain}} Fcfa
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- End Menu Pain-->
+
+
+
+
+
+
+            <!-- Menu des Omelettes -->
+
+            <div class="filters-content" *ngIf="omelettes">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of omelettesList; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <a class="cart_link" (click)="incrementerIndice()"
+                                                (click)="remplirPanierOmelette(i)">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 456.029 456.029"
+                                                    style="enable-background:new 0 0 456.029 456.029;"
+                                                    xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                        <g>
+                                                            <path
+                                                                d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                                        </g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                    <g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select [formControl]="toppingsOmelettes" multiple>
+                                                        <mat-option *ngFor="let topping of toppingListOmelettes"
+                                                            [value]="topping">
+                                                            {{topping}} Fcfa
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Menu Omelettes -->
+
+        </div>
+    </section>
+
+    <!-- end food section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Nous contacter
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Polytech
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Tel +237 698517219
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    obcgbiyoo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="" class="footer-logo">
+                            Le café
+                        </a>
+                        <p>
+                            Chez nous, votre satisfaction est notre priorité. Nous nous efforçons de vous offrir une
+                            expérience d'achat exceptionnelle, une grande variété de produits et un service client de
+                            qualité. Rejoignez-nous dès maintenant et découvrez la facilité de commander vos produits de
+                            restaurant en ligne !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        Heures d'ouverture
+                    </h4>
+                    <p>
+                        Tous les jours
+                    </p>
+                    <p>
+                        08h00 - 22h00
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> ENSPY/4GI-2023
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
+</div>

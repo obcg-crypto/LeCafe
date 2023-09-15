@@ -1,0 +1,159 @@
+<div class="sub_page">
+    <div class="hero_area">
+        <div class="bg-box">
+            <img src="../../../assets/images/hero-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            Le Café
+                        </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  mx-auto ">
+                            <li class="nav-item">
+                                <a class="nav-link"><span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"></a>
+                            </li>
+                        </ul>
+
+                        <div class="user_option">
+
+                            <a mat-button [matMenuTriggerFor]="menu" class="user_link">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item routerLink="/index">Déconnexion</button>
+                            </mat-menu>     
+                            <form class="form-inline">
+                                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <!-- food section -->
+
+    <section class="food_section layout_padding">
+        <div class="container">
+            <div *ngFor="let element of commande;let i = index">
+                <div *ngIf="element.statut != 'pret' ">
+                    <span class="containerSpan" (click)="cuisiner(i)">
+                        <mat-icon
+                            style="background-color: rgb(22, 118, 22); border-radius: 100%; cursor: pointer;">check_circle_outline</mat-icon>
+                    </span>
+                    <mat-accordion class="containeraccordion">
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>N° de table : {{element.numeroTable}}</mat-panel-title>
+                                <mat-panel-description>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+
+                            <div>
+                                <table class="my-table">
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Ingrédients</th>
+                                    </tr>
+                                    <tr *ngFor="let a of element.item">
+                                        <td>{{a.nom}}</td>
+                                        <td>{{a.ingredient}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end food section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Nous contacter
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Polytech
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Tel +237 698517219
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    obcgbiyoo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="" class="footer-logo">
+                            Le café
+                        </a>
+                        <p>
+                            Necessary, making this the first true generator on the Internet. It uses a dictionary of
+                            over
+                            200 Latin words, combined with
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        Heures d'ouverture
+                    </h4>
+                    <p>
+                        Tous les jours
+                    </p>
+                    <p>
+                        08h00 - 22h00
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> ENSPY/4GI-2023
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
+</div>

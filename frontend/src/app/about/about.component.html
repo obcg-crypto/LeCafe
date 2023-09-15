@@ -1,0 +1,169 @@
+<div class="sub_page">
+    <div class="hero_area">
+        <div class="bg-box">
+            <img src="../../../assets/images/hero-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            Le Café
+                        </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" mat-button [matMenuTriggerFor]="menu1" >
+                    <span class=""> </span>
+                </button>
+                <mat-menu #menu1="matMenu">
+                    <ul class="navbar-nav  mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/index" mat-menu-item>Acceuil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a mat-button [matMenuTriggerFor]="menu3" class="nav-link" mat-menu-item>Menu</a>
+                            <mat-menu #menu3="matMenu">
+                                <button mat-menu-item routerLink="/menu">BreakFast</button>
+                                <button mat-menu-item routerLink="#">Lunch</button>
+                                <button mat-menu-item routerLink="#">Dinner</button>
+                            </mat-menu>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/about" mat-menu-item>A Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/basket" mat-menu-item>Mon panier</a>
+                        </li>
+                    </ul>
+                </mat-menu>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  mx-auto ">
+                            <li class="nav-item ">
+                                <a class="nav-link" routerLink="/index">Acceuil </a>
+                            </li>
+                            <li class="nav-item">
+                                <a mat-button [matMenuTriggerFor]="menu2" class="nav-link">Menu</a>
+                                <mat-menu #menu2="matMenu">
+                                    <button mat-menu-item routerLink="/menu">BreakFast</button>
+                                    <button mat-menu-item routerLink="#">Lunch</button>
+                                    <button mat-menu-item routerLink="#">Dinner</button>
+                                </mat-menu>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/about">A Propos <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="user_option">
+                            <form class="form-inline">
+                                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+        <div class="container  ">
+
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="img-box">
+                        <img src="../../../assets/images/about-img.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                Nous sommes le restaurant "Le Café"
+                            </h2>
+                        </div>
+                        <p>
+                            Nous offrons une vaste gamme de produits de qualité, allant des ingrédients frais et locaux aux produits secs et emballés, en passant par les équipements de cuisine et les ustensiles spécialisés. Nous comprenons l'importance d'avoir accès à des produits fiables et de haute qualité pour garantir la satisfaction de vos clients et le succès de votre entreprise.
+
+Notre interface conviviale et intuitive vous permet de parcourir notre catalogue de produits de manière aisée. Vous pouvez naviguer par catégories, effectuer des recherches spécifiques ou découvrir nos sélections spéciales et promotions du moment. Chaque produit est accompagné d'une description détaillée, de photos attrayantes et d'informations sur sa disponibilité en stock.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Nous contacter
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Polytech
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Tel +237 698517219
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    obcgbiyoo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="" class="footer-logo">
+                            Le café
+                        </a>
+                        <p>
+                            Chez nous, votre satisfaction est notre priorité. Nous nous efforçons de vous offrir une expérience d'achat exceptionnelle, une grande variété de produits et un service client de qualité. Rejoignez-nous dès maintenant et découvrez la facilité de commander vos produits de restaurant en ligne !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        Heures d'ouverture
+                    </h4>
+                    <p>
+                        Tous les jours
+                    </p>
+                    <p>
+                        08h00 - 22h00
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> ENSPY/4GI-2023
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
+</div>

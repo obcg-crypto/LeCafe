@@ -1,0 +1,336 @@
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <h2><i class="fa-regular fa-user"></i> DashBord Admin</h2>
+    </div>
+
+    <div class="sidebar-menu">
+        <ul>
+            <li class="menu1"><a style="cursor: pointer;" (click)="showMenu()"><i class="fa-solid fa-house"></i> Gestion
+                    du menu</a></li>
+            <li class="menu1"><a style="cursor: pointer;" (click)="showProfils()"><i class="fa-solid fa-list-check"
+                        (click)="showProfils()"></i> Gestion des profils</a>
+            </li>
+            <li class="menu1"><a style="cursor: pointer;"><i class="fa-solid fa-table-cells-large"></i> Comptabilité</a>
+            </li>
+            <li class="menu1"><a style="cursor: pointer;" routerLink="/index"><mat-icon style="display: inline-block;vertical-align: middle;">exit_to_app</mat-icon>Déconnexion</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content" *ngIf="menuSection">
+
+    <div class="sub_page">
+        <div class="hero_area">
+            <div class="bg-box">
+                <img src="../../../assets/images/hero-bg.jpg" alt="">
+            </div>
+            <!-- header section strats -->
+            <header class="header_section">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand" href="index.html">
+                            <span>
+                                Le Café
+                            </span>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <!-- end header section -->
+        </div>
+
+        <!-- food section -->
+
+        <section class="food_section layout_padding">
+            <ul class="filters_menu">
+                <li class="active" (click)="showBoissons()">Boisson Chaude</li>
+                <li class="active" (click)="showCroissant()">Croissant</li>
+                <li class="active" (click)="showPain()">Pain</li>
+                <li class="active" (click)="showOmelettes()">Omelettes</li>
+            </ul>
+        </section>
+
+        <!-- Croissants section -->
+
+        <button class="btnAddItem" (click)="openDialog()">Ajouter Item</button>
+        <button class="btnAddItem2" (click)="openDialog2()">Ajouter Ingrédient</button>
+
+        <section class="food_section layout_padding" *ngIf="croissantSection">
+            <div class="filters-content">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of croissants; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field>
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select>
+                                                        <mat-option
+                                                            *ngFor="let food of toppingListCroissant;let i = index"
+                                                            [value]="food">
+                                                            {{food}} Fcfa
+                                                            <mat-icon class="delete_forever"
+                                                                (click)="deleteIngredientCroissant(i)">delete_forever</mat-icon>
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <mat-icon class="delete_forever"
+                                            (click)="deleteCroissant(i)">delete_forever</mat-icon>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Pain section -->
+
+
+        <section class="food_section layout_padding" *ngIf="painSection">
+            <div class="filters-content">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of pains; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field>
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select>
+                                                        <mat-option *ngFor="let food of toppingListPain;let i = index"
+                                                            [value]="food">
+                                                            {{food}} Fcfa
+                                                            <mat-icon class="delete_forever"
+                                                                (click)="deleteIngredientPain(i)">delete_forever</mat-icon>
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <mat-icon class="delete_forever"
+                                            (click)="deletePain(i)">delete_forever</mat-icon>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Omelettes section -->
+
+
+        <section class="food_section layout_padding" *ngIf="omeletteSection">
+            <div class="filters-content">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of omelettes; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field>
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select>
+                                                        <mat-option
+                                                            *ngFor="let food of toppingListOmelettes;let i = index"
+                                                            [value]="food">
+                                                            {{food}} Fcfa
+                                                            <mat-icon class="delete_forever"
+                                                                (click)="deleteIngredientOmelettes(i)">delete_forever</mat-icon>
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <mat-icon class="delete_forever"
+                                            (click)="deleteOmelettes(i)">delete_forever</mat-icon>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Boissons section -->
+
+        <section class="food_section layout_padding" *ngIf="boissonSection">
+            <div class="filters-content">
+                <div class="cards">
+                    <div class="row grid" *ngFor="let item of boissons; let i = index">
+                        <div>
+                            <div class="box">
+                                <div>
+
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h5>
+                                            {{item.nom}}
+                                        </h5>
+                                        <p>
+                                            {{item.description}}
+                                        </p>
+                                        <div class="options">
+                                            <h6>
+                                                {{item.cout}} Fcfa
+                                            </h6>
+                                        </div>
+                                        <div class="user_option">
+                                            <div style="margin-left: 20px;">
+                                                <mat-form-field>
+                                                    <mat-label>Ingrédients</mat-label>
+                                                    <mat-select>
+                                                        <mat-option
+                                                            *ngFor="let food of toppingListBoissons;let i = index"
+                                                            [value]="food">
+                                                            {{food}} Fcfa
+                                                            <mat-icon class="delete_forever"
+                                                                (click)="deleteIngredientBoissons(i)">delete_forever</mat-icon>
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <mat-icon class="delete_forever"
+                                            (click)="deleteBoisson(i)">delete_forever</mat-icon>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+
+
+<div class="content" *ngIf="profilSection">
+
+    <div class="sub_page">
+        <div class="hero_area">
+            <div class="bg-box">
+                <img src="../../../assets/images/hero-bg.jpg" alt="">
+            </div>
+            <!-- header section strats -->
+            <header class="header_section">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand" href="index.html">
+                            <span>
+                                Le Café
+                            </span>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <!-- end header section -->
+        </div>
+
+        <section class="food_section layout_padding">
+            <div class="container">
+                <mat-card>
+                    <mat-card-content class="body">
+                           <h1>Créer un compte</h1>
+                            <form [formGroup]='userForm' (ngSubmit)="createUser()">
+                              <div class="form-group">
+                                <label for="username">Nom d'utilisateur :</label>
+                                <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" formControlName="login">
+                              </div>
+                              <div class="form-group">
+                                <label for="password">Mot de passe :</label>
+                                <input type="password" id="password" name="password" placeholder="Mot de passe" formControlName="password">
+                              </div>
+                              <div class="form-group">
+                                <label for="password">Type de compte :</label>
+                                <select formControlName="statut">
+                                    <option value="serveur">serveur</option>
+                                    <option value="cordonBleu">cordon bleu</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <button type="submit">Créer un compte</button>
+                              </div>
+                            </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </section>
+    </div>
+
+</div>

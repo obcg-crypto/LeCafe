@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Ajouter un item</h2>
+<form mat-dialog-content [formGroup]='itemForm' (ngSubmit)="createItem()">
+    <mat-form-field>
+        <input matInput placeholder="Nom de l'item" name="name" formControlName="nom" required />
+        <mat-error> Le nom est requis </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="number" placeholder="Prix" name="prix" formControlName="cout" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Description de l'item" name="description" formControlName="description" required />
+        <mat-error> La description est requise </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <select formControlName="typeMenu">  
+            <option value="1">Boisson Chaude</option> 
+            <option value="2">Croissant</option> 
+            <option value="3">Pain</option> 
+            <option value="4">Omelettes</option> 
+        </select> 
+        <mat-error> La rubrique est requise </mat-error>
+    </mat-form-field>
+    <input (change)="onFileSelected($event)" formControlName="image" type="file" required />
+    <div>
+        <button mat-stroked-button color="primary" type="button" (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!itemForm.valid" (click)="onUpload()">Save</button>
+    </div>
+</form>
